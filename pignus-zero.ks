@@ -1,10 +1,7 @@
 # The Zero image for Pignus
 # Build with: appliance-creator -c pignus-zero.ks
 
-%include rpi.ks
-
-selinux --permissive
-bootloader --append="console=ttyAMA0 console=tty0"
+%include pignus-minimal.ks
 
 %post --erroronfail
 

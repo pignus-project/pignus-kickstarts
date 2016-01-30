@@ -1,5 +1,5 @@
 # The Minimal image for Pignus
-# Build with: appliance-creator -c pignus-base.ks
+# Build with: appliance-creator -c pignus-minimal.ks
 
 lang en_US.UTF-8
 keyboard us
@@ -7,6 +7,8 @@ timezone US/Eastern
 auth --useshadow --enablemd5
 firewall --enabled --service=mdns
 xconfig --startxonboot
+selinux --enforcing
+bootloader --append="console=ttyAMA0 console=tty0"
 
 part /boot --size=256 --fstype vfat --label boot
 part / --size=2048 --grow --fstype ext4
