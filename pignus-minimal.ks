@@ -8,7 +8,7 @@ auth --useshadow --enablemd5
 firewall --enabled --service=mdns
 xconfig --startxonboot
 selinux --enforcing
-bootloader --append="console=ttyAMA0 console=tty0"
+bootloader --append="console=ttyAMA0 console=tty0 rhgb"
 
 part /boot --size=256 --fstype vfat --label boot
 part / --size=2048 --grow --fstype ext4
