@@ -15,12 +15,11 @@ part / --size=2048 --grow --fstype ext4
 
 services --enabled=NetworkManager --disabled=network,firewalld
 
-repo --name=koji-image --exclude=* --baseurl=http://koji.base48.cz/kojifiles/repos/pica-$releasever-image/latest/$basearch
-repo --name=koji --baseurl=http://koji.base48.cz/kojifiles/repos/pica-$releasever/latest/$basearch
+repo --name=koji --baseurl=https://pignus.computer/pub/linux/pignus/releases/$releasever/Everything/$basearch/os/
 
 %packages
 @core
-generic-release
+pignus-release
 kernel
 uboot-tools
 uboot-images-armv7
