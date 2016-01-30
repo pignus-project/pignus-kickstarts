@@ -13,7 +13,7 @@ bootloader --append="console=ttyAMA0 console=tty0"
 part /boot --size=256 --fstype vfat --label boot
 part / --size=2048 --grow --fstype ext4
 
-services --enabled=NetworkManager --disabled=network
+services --enabled=NetworkManager --disabled=network,firewalld
 
 repo --name=koji-image --exclude=* --baseurl=http://koji.base48.cz/kojifiles/repos/pica-$releasever-image/latest/$basearch
 repo --name=koji --baseurl=http://koji.base48.cz/kojifiles/repos/pica-$releasever/latest/$basearch
