@@ -4,7 +4,7 @@
 lang en_US.UTF-8
 keyboard us
 timezone US/Eastern
-auth --useshadow --enablemd5
+auth --useshadow --passalgo sha256
 firewall --enabled --service=mdns
 xconfig --startxonboot
 selinux --enforcing
