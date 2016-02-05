@@ -35,13 +35,6 @@ chrony
 %end
 
 %post --erroronfail
-# Add drivers to initrd
-V=$(ls /lib/modules)
-cat >/etc/dracut.conf.d/bcm2835.conf <<EOF
-add_drivers+="sdhci_bcm2835 sdhci_pltfm"
-EOF
-dracut -v -f /boot/initramfs-$V.img $V
-
 # Install VideoCore firmware
 cp -a /usr/share/vc4-firmware/* /boot
 
