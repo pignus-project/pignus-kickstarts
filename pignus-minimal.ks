@@ -42,16 +42,6 @@ cp -a /usr/share/vc4-firmware/* /boot
 cp /usr/share/uboot/rpi/u-boot.bin /boot/kernel.img
 cp /usr/share/uboot/rpi_2/u-boot.bin /boot/kernel7.img
 
-# Support more boards
-for K in /boot/*/bcm2835-rpi-b.dtb
-do
-	for M in rpi-a-plus rpi-b-rev2 rpi-a
-	do
-		D=$(echo $K |sed s/rpi-b.dtb\$/$M.dtb/)
-		[ -f $D ] || cp $K $D
-	done
-done
-
 # Remove root password
 passwd -d root
 %end
