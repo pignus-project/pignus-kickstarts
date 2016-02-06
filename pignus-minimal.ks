@@ -32,6 +32,8 @@ NetworkManager-wifi
 dosfstools
 # The device has no RTC
 chrony
+# Include the MMC controller
+dracut-config-generic
 %end
 
 %post --erroronfail
