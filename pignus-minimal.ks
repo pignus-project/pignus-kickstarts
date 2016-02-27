@@ -23,7 +23,7 @@ pignus-release
 kernel
 uboot-tools
 uboot-images-armv7
-vc4-firmware
+bcm283x-firmware
 extlinux-bootloader
 plymouth-theme-spinner
 NetworkManager-wifi
@@ -38,11 +38,10 @@ dracut-config-generic
 
 %post --erroronfail
 # Install VideoCore firmware
-cp -a /usr/share/vc4-firmware/* /boot
+cp -a /usr/share/bcm283x-firmware/* /boot
 
 # Install bootloader
-cp /usr/share/uboot/rpi/u-boot.bin /boot/kernel.img
-cp /usr/share/uboot/rpi_2/u-boot.bin /boot/kernel7.img
+cp /usr/share/uboot/rpi/u-boot.bin /boot/
 
 # Remove root password
 passwd -d root
