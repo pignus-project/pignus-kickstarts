@@ -44,7 +44,9 @@ dracut-config-generic
 cp -a /usr/share/bcm283x-firmware/* /boot
 
 # Install bootloader
-cp /usr/share/uboot/rpi/u-boot.bin /boot/
+cp /usr/share/uboot/rpi/u-boot.bin /boot/rpi-u-boot.bin
+cp /usr/share/uboot/rpi_2/u-boot.bin /boot/rpi2-u-boot.bin
+cp /usr/share/uboot/rpi_3_32b/u-boot.bin /boot/rpi3-u-boot.bin
 
 # Remove root password
 passwd -d root
