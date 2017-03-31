@@ -19,6 +19,7 @@ repo --name=koji --baseurl=https://pignus.computer/pub/linux/pignus/releases/$re
 
 %packages
 @core
+# See /usr/share/spin-kickstarts/fedora-arm-minimal.ks
 pignus-release
 kernel
 uboot-tools
@@ -27,6 +28,8 @@ bcm283x-firmware
 extlinux-bootloader
 plymouth-theme-spinner
 NetworkManager-wifi
+-glibc-all-langpacks
+glibc-langpack-en
 # Not strictly needed, but useful: Out boot is a msdos filesystem and this
 # is useful for automated systemd-triggered check
 dosfstools
